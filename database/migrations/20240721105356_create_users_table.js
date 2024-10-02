@@ -4,11 +4,12 @@
  */
 exports.up = async function (knex) {
   return knex.schema.createTable('users', function (table) {
-    table.increments();
-    table.string('email').notNullable();
+    table.bigIncrements();
+    table.string('name');
+    table.string('email').notNullable().index();
     table.string('password').notNullable();
-    table.timestamp('created_at').defaultTo(knex.fn.now());
-    table.timestamp('updated_at').defaultTo(knex.fn.now());
+    table.boolean('isEmailVerified').defaultTo(false);
+    table.timestamps(true, true);
   });
 };
 
