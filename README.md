@@ -29,3 +29,7 @@ If you would like to support our work or just a few words of feedback, we are al
 ## License
 
 The Intent framework is open-source software licensed under the [MIT License](#license)
+
+## Steps
+1. Initial setup using command: npx new-intent-app@latest
+2. Updated package.json for branding
