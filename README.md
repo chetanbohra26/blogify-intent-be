@@ -33,3 +33,5 @@ The Intent framework is open-source software licensed under the [MIT License](#l
 ## Steps
 1. Initial setup using command: npx new-intent-app@latest
 2. Updated package.json for branding
+3. Added docker-compose file for postgres and redis
+4. Updated .env + database config + testing config

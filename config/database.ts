@@ -5,14 +5,18 @@ export default registerAs(
   'db',
   (): DatabaseOptions => ({
     isGlobal: true,
-    default: 'sqlite',
+    default: 'pg',
     connections: {
-      sqlite: {
-        client: 'sqlite3',
+      pg: {
+        client: 'pg',
         useNullAsDefault: true,
         debug: !!+process.env.DB_DEBUG,
         connection: {
-          filename: process.env.DB_FILENAME,
+          host: process.env.DB_HOST,
+          port: +process.env.DB_PORT,
+          user: process.env.DB_USER,
+          password: process.env.DB_PASSWORD,
+          database: process.env.DB_DATABASE
         },
         migrations: {
           directory: './database/migrations',
