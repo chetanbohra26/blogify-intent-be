@@ -8,7 +8,7 @@ import {
   MiddlewareConfigurator,
   Type,
 } from '@intentjs/core';
-import { UserController } from './controllers/app';
+import { AuthController } from './controllers';
 
 export class HttpKernel extends Kernel {
   /**
@@ -16,7 +16,7 @@ export class HttpKernel extends Kernel {
    * Read more - https://tryintent.com/docs/controllers
    */
   public controllers(): Type<any>[] {
-    return [UserController];
+    return [AuthController];
   }
 
   /**

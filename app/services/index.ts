@@ -5,7 +5,7 @@ import { UserDbRepository } from 'app/repositories/userDbRepository';
 export class UserService {
   constructor(
     @Inject('USER_DB_REPO') private readonly users: UserDbRepository,
-  ) {}
+  ) { }
 
   getHello(): string {
     return __('hello', { name: 'Intent' });
