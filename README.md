@@ -36,4 +36,6 @@ The Intent framework is open-source software licensed under the [MIT License](#l
 3. Added docker-compose file for postgres and redis
 4. Installed pg and uninstalled sqlite3: npm install pg && npm uninstall sqlite3
 5. Updated .env + database config + testing config
-6. Updated user migration and ran user migration: node intent migrate 
+6. Updated user migration and ran user migration: node intent migrate
+7. Created auth controller + bumped intent version to 1.34
+8. Small change in error handler filter 

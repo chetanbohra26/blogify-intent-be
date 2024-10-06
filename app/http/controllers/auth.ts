@@ -1,26 +1,19 @@
-import { Controller, Post, Req, Request, Res, Response, Transformable } from '@intentjs/core';
-import { UserService } from 'app/services';
-import { Validate } from 'class-validator';
+import { Controller, Dto, Post, Validate } from '@intentjs/core';
+import { LoginDto } from '../dto';
 
 @Controller('auth')
-export class AuthController extends Transformable {
-  constructor(private readonly service: UserService) {
-    super();
-  }
+export class AuthController {
 
   @Post('login')
+  @Validate(LoginDto)
   async loginUser(
-    @Req() req: Request,
-    @Res() res: Response,
+    @Dto() dto: LoginDto
   ) {
-    res.json({ success: true, message: 'Login Successful' });
+    return { success: true, message: 'Login Successful' };
   }
 
   @Post('register')
-  async registerUser(
-    @Req() req: Request,
-    @Res() res: Response,
-  ) {
-    res.json({ success: true, message: 'Register Successful' });
+  async registerUser() {
+    return { success: true, message: 'Register Successful' };
   }
 }
